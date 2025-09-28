@@ -30,7 +30,7 @@ int main()
   if (ret == 0) {
 
     /* child process. */
-    //write
+    write(fds[1], buf, strlen(s));
     printf("Child line 1\n");
     read(fds[0], buf, strlen(s));
     printf("Child line 2\n");
