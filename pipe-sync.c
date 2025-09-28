@@ -34,10 +34,11 @@ int main()
     printf("Child line 1\n");
     read(fds[0], buf, strlen(s));
     printf("Child line 2\n");
+    write(fds[1], buf, strlen(s));
   } else {
 
     /* parent process */
-    //read(fds[0], buf, strlen(s));
+    read(fds[0], buf, strlen(s));
     printf("Parent line 1\n");
     write(fds[1], buf, strlen(s));
     printf("Parent line 2\n");
