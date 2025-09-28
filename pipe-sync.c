@@ -19,21 +19,27 @@
 int main()
 {
   char *s, buf[1024];
+  int fds[2];
   int ret, stat;
   s  = "Use Pipe for Process Synchronization\n";
 
   /* create pipe */
+  pipe(fds);
 
   ret = fork();
   if (ret == 0) {
 
     /* child process. */
+    //write
     printf("Child line 1\n");
+    read(fds[0], buf, strlen(s));
     printf("Child line 2\n");
   } else {
 
     /* parent process */
+    //read(fds[0], buf, strlen(s));
     printf("Parent line 1\n");
+    write(fds[1], buf, strlen(s));
     printf("Parent line 2\n");
 
     wait(&stat);
