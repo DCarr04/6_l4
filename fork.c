@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     printf("In Child: %d, Parent: %d\n", getpid(), getppid());
     
     // Question 2: What will be printed if this like is commented?
-    execlp("/bin/ls", "-l", NULL);
+    //execlp("/bin/ls", "-l", NULL);
 
     // Question 3: When is this line reached/printed?
     fprintf(stderr, "print after execlp\n");
