@@ -44,4 +44,7 @@ int main()
 
     wait(&stat);
   }
+
+  close(fds[0]);
+  close(fds[1]);
 }
