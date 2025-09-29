@@ -50,4 +50,6 @@ int main()
 
   close(fds[0]);
   close(fds[1]);
+  close(fds2[0]);
+  close(fds2[1]);
 }
